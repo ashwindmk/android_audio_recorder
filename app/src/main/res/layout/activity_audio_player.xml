@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AudioPlayerActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="">
+
+        <TextView
+            android:id="@+id/file_name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginEnd="46dp"/>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+    
+    <com.google.android.material.chip.Chip
+        android:id="@+id/speed_chip"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="x 1.0"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/seek_bar"
+        android:layout_marginBottom="20dp"/>
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="40"
+        android:thumbTint="@color/player_color"
+        android:progressTint="@color/player_color"
+        app:layout_constraintBottom_toTopOf="@+id/control_layout"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/progress_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:00"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/duration_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:00"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="40dp">
+
+        <ImageButton
+            android:id="@+id/play_button"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/ic_play_circle"/>
+
+        <ImageButton
+            android:id="@+id/backward_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/play_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_backward"/>
+
+        <ImageButton
+            android:id="@+id/forward_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toEndOf="@id/play_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_forward"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

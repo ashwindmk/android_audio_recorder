@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:background="@drawable/background_round"
+    android:paddingTop="24dp"
+    android:paddingBottom="48dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save record?"
+        android:textSize="24sp"
+        android:textAlignment="center"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/file_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="16dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancel_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/gray_dark"
+            app:cornerRadius="26dp"
+            app:rippleColor="@color/gray_dark"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ok_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="Ok"
+            android:backgroundTint="@color/stroke_color"
+            android:textColor="@color/white"
+            app:cornerRadius="26dp"
+            app:rippleColor="@color/gray_dark"
+            android:layout_marginStart="24dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
